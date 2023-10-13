@@ -10,7 +10,8 @@ LaneKeepingSystem<PREC>::LaneKeepingSystem()
 
     mPID = new PIDController<PREC>(config["PID"]["P_GAIN"].as<PREC>(), config["PID"]["I_GAIN"].as<PREC>(), config["PID"]["D_GAIN"].as<PREC>());
     mMovingAverage = new MovingAverageFilter<PREC>(config["MOVING_AVERAGE_FILTER"]["SAMPLE_SIZE"].as<uint32_t>());
-    /* 
+    mLaneDetector = new LaneDetecter<PREC>(config);
+    /*
         create your lane detector.
     */
     setParams(config);
