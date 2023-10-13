@@ -23,7 +23,7 @@ public:
     using Ptr = LaneKeepingSystem*;                                     ///< Pointer type of this class
     using ControllerPtr = typename PIDController<PREC>::Ptr;            ///< Pointer type of PIDController
     using FilterPtr = typename MovingAverageFilter<PREC>::Ptr;          ///< Pointer type of MovingAverageFilter
-    using DetecterPtr = typename LaneDetecter<PREC>::Ptr;               ///< Pointer type of LaneDetecter(It's up to you)
+    using DetectorPtr = typename LaneDetector<PREC>::Ptr;               ///< Pointer type of LaneDetecter(It's up to you)
 
     static constexpr int32_t kXycarSteeringAangleLimit = 50; ///< Xycar Steering Angle Limit
     static constexpr double kFrameRate = 33.0;               ///< Frame rate
@@ -63,10 +63,12 @@ private:
      * @param[in] steeringAngle Angle to steer xycar actually
      */
     void drive(PREC steeringAngle);
+    void imageCallback(const sensor_msgs::Image& message);
 
 private:
     ControllerPtr mPID;                      ///< PID Class for Control
     FilterPtr mMovingAverage;                ///< Moving Average Filter Class for Noise filtering
+    DetectorPtr mLaneDetector;
 
     // ROS Variables
     ros::NodeHandle mNodeHandler;          ///< Node Hanlder for ROS. In this case Detector and Controler

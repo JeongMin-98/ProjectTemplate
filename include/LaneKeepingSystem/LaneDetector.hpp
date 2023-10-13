@@ -6,11 +6,12 @@
 
 /// create your lane detecter
 /// Class naming.. it's up to you.
+namespace Xycar {
 template <typename PREC>
 class LaneDetector final
 {
 public:
-    using ptr LaneDetector*; /// < Pointer type of the class(it's up to u)
+    using Ptr = LaneDetector*; /// < Pointer type of the class(it's up to u)
 
     static inline const cv::Scalar kRed = {0, 0, 255}; /// Scalar values of Red
     static inline const cv::Scalar kGreen = {0, 255, 0}; /// Scalar values of Green
@@ -24,7 +25,9 @@ private:
 
     // Debug Image and flag
     cv::Mat mDebugFrame; /// < The frame for debugging
+    void setConfiguration(const YAML::Node& config);
     bool mDebugging;
 };
+}
 
 #endif // LANE_DETECTOR_HPP_

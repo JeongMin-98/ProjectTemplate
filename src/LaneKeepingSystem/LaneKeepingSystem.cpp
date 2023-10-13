@@ -10,7 +10,7 @@ LaneKeepingSystem<PREC>::LaneKeepingSystem()
 
     mPID = new PIDController<PREC>(config["PID"]["P_GAIN"].as<PREC>(), config["PID"]["I_GAIN"].as<PREC>(), config["PID"]["D_GAIN"].as<PREC>());
     mMovingAverage = new MovingAverageFilter<PREC>(config["MOVING_AVERAGE_FILTER"]["SAMPLE_SIZE"].as<uint32_t>());
-    mLaneDetector = new LaneDetecter<PREC>(config);
+    mLaneDetector = new LaneDetector<PREC>(config);
     /*
         create your lane detector.
     */
@@ -52,6 +52,13 @@ void LaneKeepingSystem<PREC>::run()
         write your code.
         */
     }
+}
+
+template <typename PREC>
+void LaneKeepingSystem<PREC>::imageCallback(const sensor_msgs::Image& message)
+{
+    cv::Mat src = cv::Mat(message.height, message.width, CV_8UC3, const_cast<uint8_t*>(&message.data[0]), message.step);
+    cv::cvtColor(src, mFrame, cv::COLOR_RGB2BGR);
 }
 
 template <typename PREC>
