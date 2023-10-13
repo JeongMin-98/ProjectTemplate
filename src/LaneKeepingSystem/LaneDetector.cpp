@@ -2,18 +2,15 @@
 // All rights reserved.
 
 /**
- * @file HoughTransformLaneDetector.cpp
- * @author Jongrok Lee (lrrghdrh@naver.com)
- * @author Jiho Han
- * @author Haeryong Lim
- * @author Chihyeon Lee
- * @brief hough transform lane detector class source file
- * @version 1.1
- * @date 2023-05-02
+ * @file LaneDetector.cpp
+ * @author Jeongmin Kim
+ * @author Jeongbin Yim
+ * @brief lane detector class source file
+ * @version 2.1
+ * @date 2023-10-13
  */
 
 #include <numeric>
-
 #include "LaneKeepingSystem/LaneDetector.hpp"
 
 namespace Xycar {
