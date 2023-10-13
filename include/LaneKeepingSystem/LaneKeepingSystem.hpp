@@ -6,7 +6,7 @@
 #include <xycar_msgs/xycar_motor.h>
 #include <yaml-cpp/yaml.h>
 
-#include "LaneKeepingSystem/HoughTransformLaneDetector.hpp"
+#include "LaneKeepingSystem/LaneDetector.hpp"
 #include "LaneKeepingSystem/MovingAverageFilter.hpp"
 #include "LaneKeepingSystem/PIDController.hpp"
 
@@ -23,6 +23,7 @@ public:
     using Ptr = LaneKeepingSystem*;                                     ///< Pointer type of this class
     using ControllerPtr = typename PIDController<PREC>::Ptr;            ///< Pointer type of PIDController
     using FilterPtr = typename MovingAverageFilter<PREC>::Ptr;          ///< Pointer type of MovingAverageFilter
+    using DetecterPtr = typename LaneDetecter<PREC>::Ptr;               ///< Pointer type of LaneDetecter(It's up to you)
 
     static constexpr int32_t kXycarSteeringAangleLimit = 50; ///< Xycar Steering Angle Limit
     static constexpr double kFrameRate = 33.0;               ///< Frame rate
