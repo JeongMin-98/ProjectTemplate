@@ -41,6 +41,14 @@ Moving Average Filter를 C++로 구현한 코드가 작성되어 있습니다. �
 만약 PIDController을 그대로 사용하고자 한다면 config.yaml 파일에 명시되어 있는 PID 제어 값을 수정하면서 프로젝트를 진행하면 됩니다.
 
 ## LaneDetector
+각자의 팀만의 고유한 영상처리 알고리즘을 구현하여 LaneKeepingSystem을 동작시킬 수 있는 코드를 작성해야 합니다. 여러분만의 영상처리 기법을 통해서 차선인식주행을 위해 필요한 영상처리 코드를 마음껏 작성해주세요.
+### setConfiguration
+![code](https://github.com/ihmmaru99/ProjectTemplete/assets/109266664/14b5e5d9-879e-418e-8848-93c00a47bffb)<br>
+영상 처리 알고리즘을 작성하기 위해서 필요한 일부의 변수들을 config.yaml 파일로부터 가져오는 함수입니다. 여러분의 영상처리 알고리즘을 작성하고자 할 때 추가적으로 필요한 변수가 있다면 변수를 config.yaml 파일에 형식에 맞춰 작성한 다음 해당 변수를 불러오는 함수를 추가해주세요.
+
+### yourOwnFunction
+![code](https://github.com/ihmmaru99/ProjectTemplete/assets/109266664/450fcbad-e4b4-4118-a246-1b1dc6c0aa4c)<br>
+여러분들만의 함수를 작성해서 원하는 형태의 영상처리 알고리즘을 구현해주세요. 차선인식 주행을 할 수 있다면 형태, 방식, 조건 모두 상관없습니다.
 
 ## LaneKeepingSystem
 자이카의 차선인식 주행을 위해서 Main 함수에서 동작하는 run 함수가 포함되어 있는 파일입니다. 프로젝트에 필요한 모든 함수를 작성한 다음 해당 함수들을 이용해서 차선인식 주행을 할 수 있도록 코드를 작성해주세요.

@@ -29,6 +29,17 @@ void LaneDetector<PREC>::setConfiguration(const YAML::Node& config)
     mDebugging = config["DEBUG"].as<bool>();
 }
 
+/*
+Example Function Form
+template <typename PREC>
+void LaneDector<PREC>::yourOwnFunction()
+{
+    write your code.
+    &
+    you must specify your own function to your LaneDetector.hpp file.
+}
+*/
+
 template class LaneDetector<float>;
 template class LaneDetector<double>;
 } // namespace Xycar
