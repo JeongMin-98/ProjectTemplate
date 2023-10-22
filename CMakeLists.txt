@@ -138,5 +138,4 @@ target_link_libraries(${PROJECT_NAME}_node
   ${YAML_CPP_LIBRARIES}
   ${catkin_LIBRARIES}
   ${OpenCV_LIBRARIES}
-  
 )
