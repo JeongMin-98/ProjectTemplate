@@ -40,6 +40,7 @@ LaneKeepingSystem<PREC>::~LaneKeepingSystem()
 {
     delete mPID;
     delete mMovingAverage;
+    // delete your LaneDetector if you add your LaneDetector.
 }
 
 template <typename PREC>
